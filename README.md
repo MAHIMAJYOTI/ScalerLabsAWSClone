@@ -59,7 +59,7 @@ Bonus:
 ```mermaid
 flowchart LR
     B[Browser] -->|same-origin /api/*| N["Next.js on Vercel<br/>Cloudscape UI<br/>/api rewrite"]
-    N -->|proxied requests| F["FastAPI on Railway<br/>(Docker)"]
+    N -->|proxied requests| F["FastAPI on Render<br/>(Docker)"]
     F --> S[("SQLite on<br/>/data volume")]
 ```
 
@@ -280,7 +280,8 @@ Tests:
 cd backend && uv run pytest          # API + unit tests on a migrated temp DB
 cd backend && uv run ruff check .
 
-cd frontend && npm run lint && npm run build
+cd frontend && npm run lint
+BACKEND_URL=http://localhost:8000 npm run build
 # E2E needs the backend running first (see backend commands above), then:
 cd frontend && npm run test:e2e      # Playwright starts the frontend itself
 ```
@@ -291,7 +292,7 @@ cd frontend && npm run test:e2e      # Playwright starts the frontend itself
   (auto NS/SOA, duplicate names, private VPC rules, delete guard), record CRUD (CNAME conflicts,
   duplicates, protected records, atomic batch rollback), DB-level uniqueness (IntegrityError via
   direct inserts), zone file import/export incl. a bind round-trip, cross-user 404 isolation.
-- **Frontend: 26 Playwright tests** in a real Chromium — auth flow, zones (filters, preference
+- **Frontend: 38 Playwright tests** in a real Chromium — auth flow, zones (filters, preference
   persistence, create public/private, edit, delete guards, bulk delete with mixed results),
   records (atomic multi-create, server error mapped to the right form block, split panel, edit +
   change status, SOA protection, batch delete, zone file import, export download), dark mode
@@ -347,7 +348,7 @@ cd frontend && npm run test:e2e      # Playwright starts the frontend itself
 │   │   ├── components/    # shell/, hosted-zones/, records/, common/ (Cloudscape)
 │   │   ├── lib/           # api client+hooks+types, validation, format, shortcuts
 │   │   └── providers/     # query, notifications, settings, auth guard
-│   ├── tests/e2e/         # Playwright (26)
+│   ├── tests/e2e/         # Playwright (38)
 │   └── .env.example
 └── docs/screenshots/
 ```
