@@ -1,0 +1,106 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Console-style fixed footer bar — layout only; colors come from
+   Cloudscape design tokens applied inline in FooterBar.tsx. */
+.r53-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  padding: 8px 20px;
+}
+
+.r53-footer-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.r53-footer a,
+.r53-footer button {
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.r53-footer a:hover,
+.r53-footer button:hover {
+  text-decoration: underline;
+}
+
+/* Centered login card — background inherits from the Cloudscape body theme. */
+.r53-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.r53-login-card {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* Full-height centering for the auth-guard spinner */
+.r53-center-fill {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+}
+
+/* Filter row on list pages: text filter grows, selects keep natural width */
+.r53-filter-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.r53-filter-row > :first-child {
+  flex-grow: 1;
+}
+
+.r53-filter-select {
+  min-width: 170px;
+}
+
+.r53-filter-select-wide {
+  min-width: 220px;
+}
+
+/* Record name input with the zone suffix shown inline */
+.r53-name-suffix {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.r53-name-suffix > :first-child {
+  flex: 1;
+}
+
+.r53-name-suffix-label {
+  white-space: nowrap;
+}
+
+/* Monospace textarea for the zone file */
+.r53-mono textarea {
+  font-family: SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+}
+
