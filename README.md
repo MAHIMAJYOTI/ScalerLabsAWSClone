@@ -6,8 +6,8 @@ records, protected records, CNAME constraints, change propagation status, BIND z
 import/export, and more. Built as a take-home assignment with a FastAPI + SQLite backend and a
 Next.js frontend.
 
-Live demo: <https://scaler-omega.vercel.app> (backend health:
-<https://scaler-bs7b.onrender.com/api/v1/health>)
+Live demo: <https://scaler-labs-aws-clone.vercel.app> (backend health:
+<https://awsclone-backend.onrender.com/api/v1/health>)
 
 Demo credentials: username `demo`, password `route53demo`.
 
